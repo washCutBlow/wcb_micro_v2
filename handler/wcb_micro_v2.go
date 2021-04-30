@@ -18,7 +18,7 @@ func (e *Wcb_micro_v2) Call(ctx context.Context, req *wcb_micro_v2.Request, rsp 
 }
 
 // Stream is a server side stream handler called via client.Stream or the generated client code
-func (e *Wcb_micro_v2) Stream(ctx context.Context, req *wcb_micro_v2.StreamingRequest, stream wcb_micro_v2.Wcb_micro_v2_StreamStream) error {
+func (e *Wcb_micro_v2) Stream(ctx context.Context, req *wcb_micro_v2.StreamingRequest, stream wcb_micro_v2.WcbMicroV2_StreamStream) error {
 	log.Infof("Received Wcb_micro_v2.Stream request with count: %d", req.Count)
 
 	for i := 0; i < int(req.Count); i++ {
@@ -34,7 +34,7 @@ func (e *Wcb_micro_v2) Stream(ctx context.Context, req *wcb_micro_v2.StreamingRe
 }
 
 // PingPong is a bidirectional stream handler called via client.Stream or the generated client code
-func (e *Wcb_micro_v2) PingPong(ctx context.Context, stream wcb_micro_v2.Wcb_micro_v2_PingPongStream) error {
+func (e *Wcb_micro_v2) PingPong(ctx context.Context, stream wcb_micro_v2.WcbMicroV2_PingPongStream) error {
 	for {
 		req, err := stream.Recv()
 		if err != nil {

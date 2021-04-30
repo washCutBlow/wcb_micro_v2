@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package go.micro.service.wcb_micro_v2;
+option go_package="proto/wcb_micro_v2";
 
 service Wcb_micro_v2 {
 	rpc Call(Request) returns (Response) {}
